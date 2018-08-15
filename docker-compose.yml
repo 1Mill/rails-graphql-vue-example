@@ -1,1 +1,48 @@
 version: '3.6'
+
+services:
+  client:
+    build: ./client
+    env_file:
+      - '.env'
+      - '.env.production'
+    volumes:
+      - ./client:/app
+    networks:
+      - frontend
+    ports:
+      - 3000:3000
+    command: yarn run dev
+
+  db:
+    image: postgres:10.4-alpine
+    env_file:
+      - '.env'
+      - '.env.production'
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    networks:
+      - backend
+
+  backend:
+    build: ./backend
+    depends_on:
+      - db
+    env_file:
+      - '.env'
+      - '.env.production'
+    volumes:
+      - ./backend:/app
+    networks:
+      - backend
+      - frontend
+    ports:
+      - 3001:8080
+    command: bundle exec rails server -p 8080 -b 0.0.0.0
+
+volumes:
+  postgres: {}
+
+networks:
+  frontend: {}
+  backend: {}
