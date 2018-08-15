@@ -17,6 +17,10 @@
 default: &default
   adapter: postgresql
   encoding: unicode
+  # This information is provided by Docker to the application
+  host: db
+  username: <%= ENV['POSTGRES_USER'] %>
+  password: <%= ENV['POSTGRES_PASSWORD'] %>
   # For details on connection pooling, see Rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
@@ -81,5 +85,3 @@ test:
 production:
   <<: *default
   database: app_production
-  username: app
-  password: <%= ENV['APP_DATABASE_PASSWORD'] %>
