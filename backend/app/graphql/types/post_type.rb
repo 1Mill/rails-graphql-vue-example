@@ -1,6 +1,6 @@
 module Types
   class PostType < Types::BaseObject
-		description 'An authored post'
+		description 'A post authored by a user'
 
     field :id, ID, null: false
     field :title, String, null: false
