@@ -5,6 +5,8 @@ module Types
     field :id, ID, null: false
     field :name, String, null: true
     field :age, Integer, null: true
+
     field :posts, [Types::PostType], null: false
+		field :comments, [Types::CommentType], null: false
   end
 end
