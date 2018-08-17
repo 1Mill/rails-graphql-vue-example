@@ -1,7 +1,7 @@
 module Types
-	class Query::UserQuery < QueryType
+	class Queries::UserQuery < Types::QueryType
 		# Get the first X users.
-		field :users, [UserType], null: false do
+		field :users, [Objects::UserType], null: false do
 			description 'Retrieve users'
 
 			argument :limit, Integer, required: false, default_value: 7, prepare: ->(limit, ctx) {
@@ -14,7 +14,7 @@ module Types
 		end
 
 		# Get a specific user
-		field :user, UserType, null: false do
+		field :user, Objects::UserType, null: false do
 			description 'Retrieve a single user by their id'
 
 			argument :id, ID, required: true
