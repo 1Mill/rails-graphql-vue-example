@@ -5,8 +5,11 @@
 	)
 end
 
-3.times do |n|
-	Post.create(
-		:title => "Post #{n}"
-	)
+User.find_each do |user|
+	rand(0..4).to_i.times do
+		user.posts.create(
+			:title => Faker::MichaelScott.quote,
+			:body => Faker::Markdown.sandwich(5)
+		)
+	end
 end
