@@ -1,4 +1,4 @@
-rand(3..5).to_i.times do |n|
+10.times do |n|
 	User.create(
 		:name => Faker::HarryPotter.character,
 		:age => [nil, rand(5..100).to_i].sample,
