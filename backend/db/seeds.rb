@@ -1,3 +1,5 @@
+puts 'Start seeding'
+
 10.times do
 	User.create(
 		:name => Faker::HarryPotter.character,
@@ -13,3 +15,5 @@ User.find_each do |user|
 		)
 	end
 end
+
+puts 'Finished seeding'
