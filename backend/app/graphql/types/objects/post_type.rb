@@ -4,6 +4,7 @@ module Types
 
     field :id, ID, null: false
     field :title, String, null: false
+		field :body, String, null: false
 
     field :author, Objects::UserType, null: false
 		field :comments, [Objects::CommentType], null: false

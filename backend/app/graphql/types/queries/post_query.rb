@@ -1,13 +1,21 @@
 module Types
 	class Queries::PostQuery < Types::QueryType
-			field :post, Objects::PostType, null: true do
-				description 'Find a post with a given ID'
+		field :posts, [Objects::PostType], null: false do
+			description 'An array of posts'
+		end
 
-				argument :id, ID, required: true
-			end
+		def posts
+			Post.all
+		end
 
-			def post(id:)
-				Post.find(id)
-			end
+		field :post, Objects::PostType, null: true do
+			description 'Find a post with a given ID'
+
+			argument :id, ID, required: true
+		end
+
+		def post(id:)
+			Post.find(id)
+		end
 	end
 end
