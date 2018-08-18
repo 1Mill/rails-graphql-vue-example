@@ -16,4 +16,14 @@ User.find_each do |user|
 	end
 end
 
+10.times do
+	user = User.all.sample
+	post = Post.all.sample
+
+	user.comments.create(
+		:post => post,
+		:body => Faker::Markdown.random
+	)
+end
+
 puts 'Finished seeding'
