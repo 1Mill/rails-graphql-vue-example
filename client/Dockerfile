@@ -1,4 +1,4 @@
-FROM node:10.5-alpine
+FROM node:10.9-alpine
 
 # Update system dependencies and install git (to get nuxt)
 RUN apk update
