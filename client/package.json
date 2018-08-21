@@ -4,7 +4,7 @@
   "description": "The frontend client for a Rails GraphQL backend.",
   "author": "Erik Ekberg <erik.ekberg@outlook.com>",
   "private": true,
-	"config": {
+  "config": {
     "nuxt": {
       "host": "0.0.0.0",
       "port": "3000"
@@ -19,6 +19,7 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "@nuxtjs/apollo": "^4.0.0-rc1",
     "nuxt": "^1.0.0"
   },
   "devDependencies": {

@@ -13,6 +13,22 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+	/*
+  ** Load custom modules
+  */
+	modules: [
+		'@nuxtjs/apollo'
+	],
+	/*
+  ** Configure Apollo module
+  */
+	apollo: {
+		clientConfigs: {
+      default: {
+        httpEndpoint: 'http://localhost:3001'
+			}
+		}
+	},
   /*
   ** Customize the progress bar color
   */
