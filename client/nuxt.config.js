@@ -34,6 +34,13 @@ module.exports = {
         })
       }
     }
+  },
+  /*
+  ** Forcer server to check for changes within files
+  */
+  watchers: {
+    webpack: {
+      poll: true
+    }
   }
 }
-
