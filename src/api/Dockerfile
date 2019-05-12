@@ -11,7 +11,7 @@ WORKDIR /app
 RUN gem install bundler -v '~> 2.0'
 
 # Copy gem dependencies over
-COPY Gemfile* ./
+COPY Gemfile Gemfile.lock ./
 # And install them
 RUN bundle install
 
@@ -21,4 +21,4 @@ COPY . .
 # Expose and publish on port 3000
 EXPOSE 3000
 # TODO: Not a production ready CMD, only useful for development.
-CMD [ "bundle", "exec", "rails", "server", "-p 3000", "-b 0.0.0.0" ]
+CMD bundle exec rails s -p 3000 -b 0.0.0.0
