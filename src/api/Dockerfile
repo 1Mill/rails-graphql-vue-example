@@ -7,6 +7,9 @@ RUN apk update && apk add build-base nodejs postgresql-dev tzdata
 RUN mkdir /app
 WORKDIR /app
 
+# Install latest bundler
+RUN gem install bundler -v '~> 2.0'
+
 # Copy gem dependencies over
 COPY Gemfile* ./
 # And install them
