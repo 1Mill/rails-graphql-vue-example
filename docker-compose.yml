@@ -19,7 +19,7 @@ services:
     volumes:
       - ./src/client:/app
     ports:
-      - 3000:8080
+      - 8080:8080
 
   db:
     image: postgres:11-alpine

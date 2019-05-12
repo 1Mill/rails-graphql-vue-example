@@ -23,4 +23,4 @@ ENV PORT 8080
 
 EXPOSE 8080
 # TODO: Not a production ready CMD, only useful for development.
-CMD [ "yarn", "nuxt" ]
+CMD yarn nuxt
