@@ -1,3 +1,3 @@
 FactoryBot.create_list(
-	:blog, 12, :seed
+	:blog, 20, :seed
 )
