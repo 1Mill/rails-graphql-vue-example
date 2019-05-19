@@ -5,9 +5,9 @@ FactoryBot.define do
 		slug { "My blog slug" }
 
 		trait :seed do
-			content { ['Content', 'Body', 'Something', 'Else', nil].sample }
-			sequence(:title) { |n| "Some title numbered #{n}" }
-			sequence(:slug) { |n| "TODO-slug-#{n}"}
+			content { [Faker::Lorem.paragraph(rand(1..8)), nil].sample }
+			sequence(:title) { |n| "#{Faker::Appliance.brand} - #{Faker::Appliance.equipment} v1.#{n}" }
+			sequence(:slug) { |n| "#{title}" }
 		end
 	end
 end

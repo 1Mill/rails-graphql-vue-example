@@ -39,6 +39,9 @@ group :development, :test do
   # A framework and DSL for defining and using factories
   gem 'factory_bot_rails', '~> 5.0', '>= 5.0.2'
 
+  # Easily generate fake data: names, addresses, phone numbers, etc.
+  gem 'faker', '~> 1.9', '>= 1.9.3'
+
   # A testing framework for Rails 3+
   gem 'rspec-rails', '~> 3', '>= 3.8.2'
 end
