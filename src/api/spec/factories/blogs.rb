@@ -6,7 +6,7 @@ FactoryBot.define do
 		trait :seed do
 			content { [Faker::Lorem.paragraph(rand(1..8)), nil].sample }
 			sequence(:title) { |n| "#{Faker::Appliance.brand} - #{Faker::Appliance.equipment} v1.#{n}" }
-			slug { [Faker::Hipster.paragraphs(rand(1..2)), nil].sample }
+			slug { [Faker::Hipster.sentence, nil].sample }
 		end
 	end
 end
