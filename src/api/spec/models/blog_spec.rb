@@ -5,6 +5,10 @@ RSpec.describe Blog, type: :model do
 		expect(create(:blog).persisted?).to equal(true)
 	end
 
+	it 'has a valid seed' do
+		expect(create(:blog, :seed).persisted?).to equal(true)
+	end
+
 	describe '#title' do
 		context 'when #title is not present' do
 			it 'returns invalid' do
